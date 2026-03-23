@@ -56,7 +56,8 @@ export function TransactionForm({ onSave, onCancel, initial, categories }: Trans
     e.preventDefault()
     setError('')
 
-    if (!amount || parseFloat(amount) <= 0) {
+    const normalizedAmount = amount.replace(',', '.')
+    if (!normalizedAmount || parseFloat(normalizedAmount) <= 0) {
       setError('Enter a valid amount')
       return
     }
@@ -64,7 +65,7 @@ export function TransactionForm({ onSave, onCancel, initial, categories }: Trans
     setLoading(true)
     try {
       await onSave({
-        amount,
+        amount: normalizedAmount,
         type,
         category_id: categoryId,
         date,
@@ -107,7 +108,7 @@ export function TransactionForm({ onSave, onCancel, initial, categories }: Trans
         <div className="flex items-center justify-center gap-2">
           <span className="text-3xl font-bold text-muted">€</span>
           <input
-            type="number"
+            type="text"
             inputMode="decimal"
             step="0.01"
             min="0"
