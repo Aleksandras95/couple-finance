@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(cd \"C:\\\\Users\\\\ajarmalavicius\\\\Desktop\\\\Projects\\\\Study\\\\claude-apps\\\\couple-finance\" && npx tsc --noEmit 2>&1)"
+    ]
+  }
+}
