@@ -24,7 +24,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center max-w-[430px] mx-auto">
+    <div className="fixed inset-0 z-50 flex items-end justify-center max-w-[430px] mx-auto pt-12">
       {/* Backdrop */}
       <div
         ref={overlayRef}
@@ -33,7 +33,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
       />
 
       {/* Sheet */}
-      <div className="relative w-full bg-surface rounded-t-3xl shadow-2xl slide-up max-h-[90vh] overflow-hidden flex flex-col">
+      <div className="relative w-full bg-surface rounded-t-3xl shadow-2xl slide-up max-h-[calc(100dvh-48px)] overflow-hidden flex flex-col">
         {/* Handle */}
         <div className="flex justify-center pt-3 pb-1 flex-shrink-0">
           <div className="w-10 h-1 rounded-full bg-border" />
